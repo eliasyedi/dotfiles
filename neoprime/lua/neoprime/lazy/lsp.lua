@@ -28,9 +28,9 @@ return {
             ensure_installed = {
                 "lua_ls",
                 "rust_analyzer",
-                "tsserver",
+--                "tsserver",
 --                "jtdsl",
-                "ast_grep",
+ --               "ast_grep",
                 "gopls",
             },
             handlers = {
