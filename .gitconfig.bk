@@ -1,0 +1,9 @@
+[core]
+	autocrlf = input
+[user]
+	name = Elias Olmedo
+	email = eolmedo@roshka.com
+
+
+[includeIf "gitdir:~/personal/"]
+    path = ~/personal/.gitconfig
