@@ -1,0 +1,89 @@
+" .ideavimrc is a configuration file for IdeaVim plugin. It uses
+"   the same commands as the original .vimrc configuration.
+" You can find a list of commands here: https://jb.gg/h38q75
+" Find more examples here: https://jb.gg/share-ideavimrc
+
+
+"" -- Suggested options --
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=10
+clipboard+=unnamed
+set showmode
+set showcmd
+
+
+set commentary
+let mapleader=" "
+nnoremap <Space> <Nop>
+" Do incremental searching.
+set incsearch
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+
+"NerdTree
+set nerdtree
+map <leader>nt :NERDTreeToggle<CR>
+map <leader>nf ::NERDTreeFind<CR>
+
+
+
+" --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
+
+" Highlight copied text
+Plug 'machakann/vim-highlightedyank'
+" Commentary plugin
+"gcc to comment line gc for visual mode
+Plug 'tpope/vim-commentary'
+
+
+map <leader>; <Action>(FileStructurePopup)
+
+
+"git configuration
+map <leader>gg <Action>(GitRepositoryActions)
+map <leader>gb <Action>(Git.Branches)
+
+
+
+"Errors
+map [d <Action>(GotoPreviousError)
+map ]d <Action>(GotoNextError)
+
+
+"split windows
+nmap sh :split <CR>
+nmap sH <Action>(MoveTabDown)
+nmap sv :vsplit <CR>
+nmap sV <Action>(MoveTabRight)
+nmap ss <Action>(MoveEditorToOppositeTabGroup)
+nmap so <Action>(MaximizeEditorInSplit)
+
+
+
+"navigation
+map <leader>i <Action>(GotoImplementation)
+map <leader>gd <Action>(GotoDeclaration)
+map <leader>u <Action>(ShowUsages)
+map <leader>e <Action>(RecentFiles)
+map <C-S-h> <Action>(NextProjectWindow)
+map <C-S-l> <Action>(PreviousProjectWindow)
+" Popup navigation
+"map <C-j> <Action>(PopupMenu-selectNext)
+"map <C-k> <Action>(PopupMenu-selectPrev)
+
+
+
+
+"" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
+"" Map \r to the Reformat Code action
+"map \r <Action>(ReformatCode)
+
+"" Map <leader>d to start debug
+"map <leader>d <Action>(Debug)
+
+"" Map \b to toggle the breakpoint on the current line
+"map \b <Action>(ToggleLineBreakpoint)
+map <leader>b <Action>(ToggleLineBreakpoint)
