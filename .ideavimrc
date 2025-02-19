@@ -87,3 +87,21 @@ map <C-S-l> <Action>(PreviousProjectWindow)
 "" Map \b to toggle the breakpoint on the current line
 "map \b <Action>(ToggleLineBreakpoint)
 map <leader>b <Action>(ToggleLineBreakpoint)
+
+
+
+" Display options
+map <leader>dd <action>(ToggleDistractionFreeMode)
+map <leader>dz <action>(ToggleZenMode)
+map <leader>df <action>(ToggleFullScreen)
+
+
+
+" For generation of code
+map <leader>I <action>(Generate)
+
+
+
+" Custom snippet for replacing word
+nnoremap <leader>r :.,$s//gc<Left><Left><Left>
+
